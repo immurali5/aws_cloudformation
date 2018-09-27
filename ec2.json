@@ -1,0 +1,17 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "SampleTemplate",
+    "Resources": {
+        
+        "ec2": {
+            "Type": "AWS::EC2::Instance",
+            "Properties": {
+                "KeyName": "Ansible",
+                "ImageId": "ami-04ea96fkb",
+                "InstanceType": "t2.micro",
+                "SecurityGroupIds" : ["linux"]
+            }
+                
+        }
+    }
+}
