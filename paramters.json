@@ -1,0 +1,44 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "ec2_parameter",
+    "Parameters": {
+        
+        "ami": {
+            "Description": "ami-id",
+            "Type": "String",
+            "Default": "ami-04ea996e7a3e7ad6b"
+        },
+        
+        "type": {
+            "Description": "instance_type",
+            "Type": "String",
+            "Default": "t2.micro"
+        },
+
+        
+        "key": {
+            "Description": "private_key",
+            "Type": "String",
+            "Default": "Ansible"
+        }
+        
+        
+    },
+    "Resources": {
+       "ec2Parameter": {
+           "Type": "AWS::EC2::Instance",
+           "Properties": {
+               "KeyName": 
+               { "Ref": "key" }
+               ,
+               "ImageId": 
+               { "Ref": "ami" },
+               "InstanceType": 
+               { "Ref": "type" }
+               ,
+               "SecurityGroupIds" : ["linux"]
+       }
+               }
+    }
+    
+}
