@@ -1,0 +1,41 @@
+{
+   "AWSTemplateFormatVersion" : "2010-09-09",
+   "Description": "vpc_resources",
+   "Resources" : {
+       
+       "muralivpc": {
+         "Type": "AWS::EC2::VPC",
+         "Properties": {
+           "CidrBlock": "172.19.0.0/16",
+           "Tags": ["-"]
+         }
+       }
+      },
+      "Resources" : {   
+       "muralisub1": {
+         "Type": "AWS::EC2::Subnet",
+         "Properties": {
+           "AvailabilityZone": "ap-south-1a",
+           "VpcId": "muralivpc",
+           "CidrBlock": "172.19.0.0/18",
+           "Tags": ["-"]
+         }
+       }
+      },
+      "Resources" : {
+       
+       "muralisub2": {
+         "Type": "AWS::EC2::Subnet",
+         "Properties": {
+           "AvailabilityZone": "ap-south-1b",
+           "VpcId": "muralivpc",
+           "CidrBlock": "172.19.64.0/18",
+           "Tags": ["-"]
+         }
+       }
+       
+       
+       
+
+   } 
+}
